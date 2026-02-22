@@ -1,0 +1,88 @@
+
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Casa · Dashboard</title>
+  <meta name="theme-color" content="#0a5f89">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="assets/style.css" />
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml" />
+</head>
+<body>
+  <header class="appbar">
+    <div class="left">
+      <img src="assets/icons/home.svg" class="ico" alt="home"/>
+      <span class="title">Casa</span>
+    </div>
+    <div class="right kpi" id="kpi-weather">—°C · — km/h</div>
+  </header>
+
+  <div id="state-banner" class="banner">—</div>
+
+  <main class="content">
+    <h2>Dashboard</h2>
+    <div class="cards">
+      <div class="card" id="card-people">
+        <div class="chip">
+          <img src="assets/icons/people.svg" class="chip-ico" alt="persone"/>
+        </div>
+        <div class="card-body">
+          <div class="card-title">Persone</div>
+          <div class="card-value" id="val-people">—</div>
+        </div>
+      </div>
+      <div class="card" id="card-energy">
+        <div class="chip">
+          <img src="assets/icons/bolt.svg" class="chip-ico" alt="energy"/>
+        </div>
+        <div class="card-body">
+          <div class="card-title">Energy <span class="unit">kWh</span></div>
+          <div class="card-value" id="val-energy">—</div>
+        </div>
+      </div>
+      <div class="card" id="card-temp">
+        <div class="chip">
+          <img src="assets/icons/thermo.svg" class="chip-ico" alt="temp"/>
+        </div>
+        <div class="card-body">
+          <div class="card-title">Temperatura <span class="unit">°C</span></div>
+          <div class="card-value" id="val-temp">—</div>
+        </div>
+      </div>
+      <div class="card" id="card-hum">
+        <div class="chip">
+          <img src="assets/icons/humidity.svg" class="chip-ico" alt="umidita"/>
+        </div>
+        <div class="card-body">
+          <div class="card-title">Umidità <span class="unit">%</span></div>
+          <div class="card-value" id="val-hum">—</div>
+        </div>
+      </div>
+    </div>
+
+    <h3>Preferiti</h3>
+    <div class="tiles">
+      <button class="tile" data-action="set_vacanza"><img src="assets/icons/vacanza.svg" class="ico">Vacanza</button>
+      <button class="tile" data-action="set_override"><img src="assets/icons/shield.svg" class="ico">Override</button>
+      <button class="tile" data-action="alza_tutto"><img src="assets/icons/up.svg" class="ico">Alza</button>
+      <button class="tile" data-action="abbassa_tutto"><img src="assets/icons/down.svg" class="ico">Abbassa</button>
+      <button class="tile" data-action="piante"><img src="assets/icons/leaf.svg" class="ico">Piante</button>
+    </div>
+
+    <div class="update">Aggiornamento: <span id="val-update">—</span></div>
+  </main>
+
+  <nav class="bottom">
+    <a class="active"><img src="assets/icons/home.svg" class="ico">Home</a>
+    <a><img src="assets/icons/device.svg" class="ico">Dispositivi</a>
+    <a id="open-logs"><img src="assets/icons/log.svg" class="ico">Log</a>
+    <a><img src="assets/icons/people.svg" class="ico">Persone</a>
+    <a><img src="assets/icons/menu.svg" class="ico">Menu</a>
+  </nav>
+
+  <script>window.__WEB_APP_URL__ = 'https://script.google.com/macros/s/AKfycbzRf9E4gTCHnq3-9Hm6BPLjIxwuTM5CiawvdbV1zKFfVQew0MWMD-Eq8nTqRW_c67uG/exec';</script>
+  <script src="js/app.js"></script>
+</body>
+</html>

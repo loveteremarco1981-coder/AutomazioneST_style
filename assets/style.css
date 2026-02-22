@@ -1,0 +1,41 @@
+
+:root{
+  --c1:#0c89c7; --c2:#0aa1d9; --c3:#0bb1e6; --c4:#0895c8;
+  --bg:#0a3651; --text:#f8fbff; --muted:#d7e7f3; --shadow:rgba(0,0,0,.25);
+  --chip:#0e5f8d; --tile:#134f73; --banner:#d7263d; --line:rgba(255,255,255,.18);
+}
+*{box-sizing:border-box} html,body{height:100%%}
+body{margin:0; color:var(--text); background:linear-gradient(180deg,#0a3651,#0b74a8 40%%,#0fb7ed)}
+img{display:inline-block}
+.ico{width:18px;height:18px;vertical-align:-3px}
+
+.appbar{height:60px; display:flex; align-items:center; justify-content:space-between; padding:0 14px; background:linear-gradient(180deg,#0b74a8,#0a5f89); border-bottom:1px solid var(--line)}
+.appbar .title{margin-left:8px; font-weight:800; letter-spacing:.02em}
+.kpi{background:rgba(0,0,0,.25); padding:6px 10px; border-radius:999px; font-weight:700}
+
+.banner{height:34px; display:flex; align-items:center; justify-content:center; background:var(--banner); color:white; font-weight:900; letter-spacing:.1em}
+
+.content{padding:14px; padding-bottom:80px}
+.content h2{margin:6px 0 12px 0}
+.content h3{margin:18px 0 10px 0}
+
+.cards{display:grid; grid-template-columns:repeat(2,minmax(280px,1fr)); gap:16px}
+.card{position:relative; display:flex; align-items:center; gap:12px; background:linear-gradient(180deg,#0b6fa5,#0a5f89); border-radius:18px; padding:12px 14px; box-shadow:0 6px 14px var(--shadow), inset 0 0 0 1px var(--line)}
+.card .chip{width:40px;height:40px; border-radius:12px; background:var(--chip); display:flex; align-items:center; justify-content:center; box-shadow:inset 0 0 0 2px var(--line)}
+.chip-ico{width:20px;height:20px; opacity:.95}
+.card-title{opacity:.9}
+.card-value{font-size:22px; font-weight:800; margin-top:4px}
+.unit{opacity:.7; font-size:12px; font-weight:700; margin-left:6px}
+
+.tiles{display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:12px}
+.tile{background:var(--tile); color:var(--text); border:none; border-radius:12px; padding:12px; font-weight:800; display:flex; align-items:center; gap:8px; box-shadow:inset 0 0 0 1px var(--line)}
+.tile:active{transform:translateY(1px)}
+
+.update{margin-top:12px; color:var(--muted)}
+
+.bottom{position:fixed; bottom:0; left:0; right:0; height:56px; display:flex; align-items:center; justify-content:space-around; background:linear-gradient(180deg,#0b74a8,#0a5f89); border-top:1px solid var(--line)}
+.bottom a{color:var(--text); text-decoration:none; opacity:.9; display:flex; align-items:center; gap:6px; font-weight:700}
+.bottom .ico{width:16px;height:16px}
+.bottom a.active{opacity:1}
+
+@media (max-width:720px){ .cards{grid-template-columns:1fr} }
