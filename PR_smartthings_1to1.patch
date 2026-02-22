@@ -1,422 +1,71 @@
 diff --git a/index.html b/index.html
-new file mode 100644
-index 0000000..1a2b3c4
---- /dev/null
+index 1a2b3c4..7f8e9d0 100644
+--- a/index.html
 +++ b/index.html
-@@ -0,0 +1,147 @@
-+<!doctype html>
-+<html lang="it">
-+<head>
-+  <meta charset="utf-8"/>
-+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-+  <title>Automazione • Home</title>
-+  <link rel="stylesheet" href="assets/style.css"/>
-+</head>
-+<body>
-+  <div id="app">
-+    <!-- Top bar -->
-+    <header class="topbar">
-+      <div class="title-area">
-+        <h1 class="app-title">Home</h1>
-+        <span id="stateBadge" class="state-badge">—</span>
-+      </div>
-+      <div id="weatherPill" class="weather-pill">
-+        <span id="weatherIcon" class="w-ico">☀️</span>
-+        <span id="weatherTemp">--°</span>
-+        <span class="dot">·</span>
-+        <span id="weatherWind">-- km/h</span>
-+      </div>
-+    </header>
-+
-+    <!-- Barra Persone (clic → pagina Persone) -->
-+    <div id="peopleBar" class="people-bar" role="button" tabindex="0">
-+      <span>Persone</span>
-+      <span id="peopleSummary" class="people-summary">—</span>
-+    </div>
-+
-+    <!-- Pagina Home -->
-+    <main id="pageHome" class="page page-active">
-+      <section class="card energy-card">
-+        <div class="card-title">Energy</div>
-+        <div class="energy-value" id="energyValue">— kWh</div>
-+      </section>
-+      <section class="favorites">
-+        <div class="fav-grid">
-+          <button id="btnOverride" class="tile tile-md">
-+            <div class="tile-ico">🛡️</div>
-+            <div class="tile-txt">Override</div>
-+            <div id="lblOverride" class="tile-sub">Off</div>
-+          </button>
-+          <button id="btnVacanza" class="tile tile-md">
-+            <div class="tile-ico">🏖️</div>
-+            <div class="tile-txt">Vacanza</div>
-+            <div id="lblVacanza" class="tile-sub">Off</div>
-+          </button>
-+          <button id="btnPiante" class="tile tile-md">
-+            <div class="tile-ico">🌿</div>
-+            <div class="tile-txt">Piante</div>
-+            <div class="tile-sub">Irriga</div>
-+          </button>
-+          <button id="btnAlza" class="tile tile-md">
-+            <div class="tile-ico">🪟</div>
-+            <div id="lblAlza" class="tile-txt">Alza</div>
-+            <div class="tile-sub">Se clicco si abbassa</div>
-+          </button>
-+        </div>
-+      </section>
-+    </main>
-+
-+    <!-- Pagina Persone -->
-+    <main id="pagePeople" class="page">
-+      <section class="card">
-+        <div class="card-title">Persone</div>
-+        <ul id="peopleList" class="list"></ul>
-+      </section>
-+    </main>
-+
-+    <!-- Pagina Dispositivi -->
-+    <main id="pageDevices" class="page">
-+      <section class="card">
-+        <div class="card-title">Telecamere</div>
-+        <div class="cams">
-+          <div class="cam-row">
-+            <span>Interne</span>
-+            <span id="camInterne" class="badge">—</span>
-+          </div>
-+          <div class="cam-row">
-+            <span>Esterne</span>
-+            <span id="camEsterne" class="badge">—</span>
-+          </div>
-+        </div>
-+      </section>
-+    </main>
-+
-+    <!-- Pagina Log -->
-+    <main id="pageLog" class="page">
-+      <section class="card">
-+        <div class="card-title">Log (solo errori)</div>
-+        <ul id="logErrors" class="list"></ul>
-+      </section>
-+    </main>
-+
-+    <!-- Bottom nav -->
-+    <nav class="bottom-nav">
-+      <button data-tab="home" class="nav-btn nav-active">Home</button>
-+      <button data-tab="people" class="nav-btn">Persone</button>
-+      <button data-tab="devices" class="nav-btn">Dispositivi</button>
-+      <button data-tab="log" class="nav-btn">Log</button>
-+    </nav>
-+  </div>
-+
-+  <div id="toast" class="toast"></div>
-+  <script src="js/app.js"></script>
-+</body>
-+</html>
-diff --git a/assets/style.css b/assets/style.css
-new file mode 100644
-index 0000000..2b3c4d5
---- /dev/null
-+++ b/assets/style.css
-@@ -0,0 +1,255 @@
-+/* Base */
-+:root{
-+  --bg:#0e1116;
-+  --card:#151a22;
-+  --fg:#e7eef7;
-+  --muted:#9fb0c3;
-+  --accent:#4da3ff;
-+  --good:#25c376;
-+  --bad:#ff5d5d;
-+  --warn:#ffb020;
-+  --shadow:0 8px 24px rgba(0,0,0,.35);
-+  --radius:14px;
-+}
-+*{box-sizing:border-box}
-+html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font:16px/1.2 system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
-+button{cursor:pointer}
-+
-+/* Layout */
-+#app{max-width:480px;margin:0 auto;padding-bottom:72px}
-+.topbar{
-+  display:flex;align-items:center;justify-content:space-between;
-+  padding:16px 16px 8px 16px;
-+}
-+.title-area{display:flex;align-items:center;gap:10px}
-+.app-title{margin:0;font-size:20px;font-weight:600}
-+.state-badge{
-+  font-size:12px;padding:6px 10px;border-radius:999px;background:#223146;color:#d9f2ff;border:1px solid #2d4a70;
-+}
-+.state-badge.ok{background:rgba(37,195,118,.15);color:#c8f5df;border-color:#25c376}
-+.state-badge.alert{background:rgba(255,93,93,.12);color:#ffd6d6;border-color:#ff5d5d}
-+
-+.weather-pill{
-+  display:flex;align-items:center;gap:6px;
-+  background:#1a2230;border:1px solid #2b3d56;border-radius:999px;padding:6px 10px;color:#d9e8ff
-+}
-+.w-ico{font-size:18px}
-+.dot{opacity:.6}
-+
-+.people-bar{
-+  display:flex;align-items:center;justify-content:space-between;
-+  margin:0 16px 10px 16px;padding:10px 12px;border-radius:12px;
-+  background:#121824;border:1px solid #222c3d;color:var(--muted);
-+}
-+.people-bar:hover{background:#151d2a}
-+.people-summary{color:#c9d7ea}
-+
-+.page{display:none;padding:0 16px 16px}
-+.page-active{display:block}
-+
-+.card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:16px;margin-top:12px;border:1px solid #242a34}
-+.card-title{font-size:14px;color:var(--muted);margin-bottom:8px}
-+
-+.energy-card .energy-value{font-size:36px;font-weight:700;letter-spacing:.5px}
-+
-+.favorites{margin-top:12px}
-+.fav-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-+.tile{
-+  background:#111827;border:1px solid #222c3d;border-radius:16px;color:var(--fg);
-+  padding:14px;min-height:94px;text-align:left;
-+}
-+.tile:hover{background:#132033}
-+.tile-ico{font-size:24px;margin-bottom:8px}
-+.tile-txt{font-size:16px;font-weight:600}
-+.tile-sub{color:var(--muted);margin-top:2px;font-size:12px}
-+.tile.on{outline:2px solid var(--accent)}
-+.tile.warn{outline:2px solid var(--warn)}
-+
-+.list{list-style:none;padding:0;margin:0}
-+.list li{
-+  display:flex;align-items:center;justify-content:space-between;
-+  padding:12px 0;border-bottom:1px solid #222c3d;color:#d9e8ff
-+}
-+.list .sub{font-size:12px;color:var(--muted)}
-+.badge{
-+  display:inline-block;padding:4px 10px;border-radius:999px;border:1px solid #2b3d56;background:#1a2230;color:#cfe2ff
-+}
-+.badge.ok{border-color:#25c376;background:rgba(37,195,118,.15);color:#baf0d5}
-+.badge.err{border-color:#ff5d5d;background:rgba(255,93,93,.12);color:#ffd6d6}
-+
-+.cams .cam-row{
-+  display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-bottom:1px solid #222c3d
-+}
-+
-+.bottom-nav{
-+  position:fixed;left:0;right:0;bottom:0;background:#0f141d;border-top:1px solid #232b3a;
-+  display:flex;gap:2px;justify-content:space-around;padding:10px 8px;max-width:480px;margin:0 auto;
-+}
-+.nav-btn{
-+  flex:1;background:#0f141d;border:1px solid #1e2736;color:#cfe2ff;padding:10px 6px;border-radius:12px;font-weight:600
-+}
-+.nav-btn.nav-active{border-color:#4da3ff;background:#12233b;color:white}
-+
-+.toast{
-+  position:fixed;left:50%;transform:translateX(-50%);bottom:80px;
-+  background:#101826;color:#e7f1ff;padding:10px 14px;border:1px solid #294163;border-radius:10px;box-shadow:var(--shadow);
-+  opacity:0;pointer-events:none;transition:opacity .2s ease
-+}
-+.toast.show{opacity:1}
+@@ -1,16 +1,20 @@
+ <!doctype html>
+ <html lang="it">
+ <head>
+   <meta charset="utf-8"/>
+   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+   <title>Automazione • Home</title>
+-  assets/style.css
++  <!-- No-store per evitare caching aggressiva dell'HTML -->
++  <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0"/>
++  <meta http-equiv="Pragma" content="no-cache"/>
++  <meta http-equiv="Expires" content="0"/>
++  <!-- CSS con cache-busting -->
++  <link rel="stylesheet" href="assets/style.css?v=20260222T1420">
+ </head>
+ <body>
+   <div id="app">
+     <!-- Top bar -->
+     <header class="topbar">
+       <div class="title-area">
+         <h1 class="app-title">Home</h1>
+         <span id="stateBadge" class="state-badge">—</span>
+@@ -101,7 +105,8 @@
+     </nav>
+   </div>
+ 
+   <div id="toast" class="toast"></div>
+-  js/app.js</script>
++  <!-- JS con cache-busting -->
++  <script src="js/app.js?v=20260222T1420"></script>
+ </body>
+ </html>
 diff --git a/js/app.js b/js/app.js
-new file mode 100644
-index 0000000..3c4d5e6
---- /dev/null
+index 51ae594..aaaa111 100644
+--- a/js/app.js
 +++ b/js/app.js
-@@ -0,0 +1,420 @@
-+/* Automazione UI — SmartThings-like 2x2 */
+@@ -1,6 +1,11 @@
+ /* Automazione UI — SmartThings-like 2x2 */
+-/* Config: ENDPOINT_URL è già impostato sul tuo Apps Script /exec */
 +/* Config: ENDPOINT_URL è già impostato sul tuo Apps Script /exec */
-+const ENDPOINT_URL = 'https://script.google.com/macros/s/AKfycbzRf9E4gTCHnq3-9Hm6BPLjIxwuTM5CiawvdbV1zKFfVQew0MWMD-Eq8nTqRW_c67uG/exec';
+ const ENDPOINT_URL = 'https://script.google.com/macros/s/AKfycbzRf9E4gTCHnq3-9Hm6BPLjIxwuTM5CiawvdbV1zKFfVQew0MWMD-Eq8nTqRW_c67uG/exec';
 +
-+/* Stato UI */
-+let MODEL = null;
-+let isUpGuess = true; // ipotesi iniziale per Alza/Abbassa
-+
-+/* Helpers */
-+function $(sel){ return document.querySelector(sel); }
-+function $all(sel){ return Array.from(document.querySelectorAll(sel)); }
-+function toast(msg){
-+  const t = $('#toast'); t.textContent = msg || '';
-+  t.classList.add('show'); setTimeout(()=>t.classList.remove('show'), 1700);
++// Hard no-cache sugli script JSONP (aggiunge un t=timestamp alla richiesta)
++function nocache(url){
++  const sep = url.includes('?') ? '&' : '?'; return url + sep + 't=' + Date.now();
 +}
-+function fmtTs(d){
-+  if(!d) return '—';
-+  const dt = (d instanceof Date) ? d : new Date(d);
-+  const it = new Intl.DateTimeFormat('it-IT',{dateStyle:'short', timeStyle:'short'});
-+  return it.format(dt);
-+}
-+function weatherEmoji(key){
-+  const map = {
-+    sun:'☀️', few:'🌤️', part:'⛅', cloud:'☁️',
-+    fog:'🌫️', drizzle:'🌦️', rain:'🌧️', showers:'🌦️',
-+    storm:'⛈️', hail:'🌨️'
-+  };
-+  return map[key] || '☀️';
-+}
-+function setBadgeState(state){
-+  const el = $('#stateBadge');
-+  el.classList.remove('ok','alert');
-+  let label = '—';
-+  if(!state){ el.textContent = label; return; }
-+  const s = String(state).toUpperCase();
-+  if(s.startsWith('COMFY')){ el.classList.add('ok'); label = 'COMFY'; }
-+  else if(s.startsWith('SECURITY')){ el.classList.add('alert'); label = 'SECURITY'; }
-+  else { label = s; }
-+  el.textContent = label;
-+}
-+function navTo(tab){
-+  const map = {home:'#pageHome', people:'#pagePeople', devices:'#pageDevices', log:'#pageLog'};
-+  $all('.page').forEach(p=>p.classList.remove('page-active'));
-+  $(map[tab]).classList.add('page-active');
-+  $all('.nav-btn').forEach(b=>b.classList.remove('nav-active'));
-+  $(`.nav-btn[data-tab="${tab}"]`).classList.add('nav-active');
-+  if(tab==='people') loadPeople();
-+  if(tab==='devices') loadCams();
-+  if(tab==='log') loadErrors();
-+}
-+
-+/* Admin calls */
-+function callAdmin(evt, value){
-+  return new Promise((resolve,reject)=>{
-+    const cb = 'cb_admin_'+Math.random().toString(36).slice(2);
-+    window[cb] = (res)=>{ try{ delete window[cb]; resolve(res); }catch{} };
-+    const v = (value===undefined)? '' : '&value='+encodeURIComponent(String(value));
-+    const url = `${ENDPOINT_URL}?admin=1&event=${encodeURIComponent(evt)}&callback=${cb}${v}`;
-+    const s = document.createElement('script'); s.src = url; s.onerror = reject;
-+    document.body.appendChild(s);
-+    setTimeout(()=>{ try{ s.remove(); }catch{} }, 2000);
-+  });
-+}
-+
-+/* Mini endpoints */
-+function jsonp(path, cbname){
-+  return new Promise((resolve,reject)=>{
-+    const cb = cbname || ('cb_'+Math.random().toString(36).slice(2));
-+    window[cb] = (res)=>{ try{ delete window[cb]; resolve(res); }catch{} };
-+    const url = `${ENDPOINT_URL}${path}${path.includes('?')?'&':'?'}callback=${cb}`;
-+    const s = document.createElement('script'); s.src = url; s.onerror = reject;
-+    document.body.appendChild(s);
-+    setTimeout(()=>{ try{ s.remove(); }catch{} }, 3000);
-+  });
-+}
-+function loadPeople(){
-+  jsonp('?people=1').then(res=>{
-+    const arr = (res && res.people) ? res.people : [];
-+    const ul = $('#peopleList'); ul.innerHTML = '';
-+    arr.forEach(p=>{
-+      const li = document.createElement('li');
-+      const left = document.createElement('div');
-+      left.innerHTML = `<div>${p.name}</div><div class="sub">${p.lastEvent||'—'} • ${fmtTs(p.ts)}</div>`;
-+      const right = document.createElement('div');
-+      right.innerHTML = `<span class="badge ${p.online?'ok':'err'}">${p.online?'Online':'Offline'}</span>`;
-+      li.appendChild(left); li.appendChild(right); ul.appendChild(li);
-+    });
-+  }).catch(()=>{ /* ignore */ });
-+}
-+function loadCams(){
-+  jsonp('?cams=1').then(res=>{
-+    const ci = $('#camInterne'), ce = $('#camEsterne');
-+    const iOn = !!(res && res.interne), eOn = !!(res && res.esterne);
-+    ci.textContent = iOn ? 'ON' : 'OFF'; ci.className = 'badge '+(iOn?'ok':'err');
-+    ce.textContent = eOn ? 'ON' : 'OFF'; ce.className = 'badge '+(eOn?'ok':'err');
-+  }).catch(()=>{ /* ignore */ });
-+}
-+function loadErrors(){
-+  jsonp('?errors=1').then(res=>{
-+    const ul = $('#logErrors'); ul.innerHTML='';
-+    const arr = (res && res.errors) ? res.errors : [];
-+    if(arr.length===0){
-+      const li = document.createElement('li'); li.textContent='Nessun errore';
-+      ul.appendChild(li); return;
-+    }
-+    arr.forEach(e=>{
-+      const li = document.createElement('li');
-+      const left = document.createElement('div');
-+      left.innerHTML = `<div>${e.code||'ERR'}</div><div class="sub">${e.desc||''} • ${fmtTs(e.ts)}</div>`;
-+      ul.appendChild(li);
-+      li.appendChild(left);
-+    });
-+  }).catch(()=>{ /* ignore */ });
-+}
-+
-+/* Prima chiamata: modello completo */
-+function loadModel(){
-+  return new Promise((resolve,reject)=>{
-+    window.onModel = (m)=>{ try{ MODEL=m; renderHome(m); resolve(m); }catch(e){reject(e);} };
-+    const s = document.createElement('script');
-+    s.src = `${ENDPOINT_URL}?callback=onModel`; s.onerror = reject;
-+    document.body.appendChild(s);
-+    setTimeout(()=>{ try{ s.remove(); }catch{} }, 3000);
-+  });
-+}
-+
-+/* Render */
-+function renderHome(m){
-+  setBadgeState(m && m.state);
-+  if(m && m.weather){
-+    $('#weatherIcon').textContent = weatherEmoji(m.weather.iconEmoji || '');
-+    $('#weatherTemp').textContent = (m.weather.tempC!=null ? Math.round(m.weather.tempC)+'°' : '--°');
-+    $('#weatherWind').textContent = (m.weather.windKmh!=null ? Math.round(m.weather.windKmh)+' km/h' : '-- km/h');
-+  }
-+  const ev = (m && m.energy && m.energy.kwh!=null) ? m.energy.kwh : null;
-+  $('#energyValue').textContent = (ev!=null ? String(ev)+' kWh' : '— kWh');
-+  $('#lblOverride').textContent = (m && m.override) ? 'On' : 'Off';
-+  $('#lblVacanza').textContent = (m && m.vacanza) ? 'On' : 'Off';
-+  $('#btnOverride').classList.toggle('on', !!(m && m.override));
-+  $('#btnVacanza').classList.toggle('on', !!(m && m.vacanza));
-+  const st = String(m && m.state || '').toUpperCase();
-+  isUpGuess = (st==='COMFY_DAY');
-+  $('#lblAlza').textContent = isUpGuess ? 'Abbassa' : 'Alza';
-+  const ppl = (m && m.people) ? m.people : [];
-+  const onCount = ppl.filter(p=>p.online).length;
-+  $('#peopleSummary').textContent = `${onCount} online / ${ppl.length} totali`;
-+  if(m && m.cams){
-+    $('#camInterne').textContent = m.cams.interne ? 'ON' : 'OFF';
-+    $('#camInterne').className = 'badge '+(m.cams.interne?'ok':'err');
-+    $('#camEsterne').textContent = m.cams.esterne ? 'ON' : 'OFF';
-+    $('#camEsterne').className = 'badge '+(m.cams.esterne?'ok':'err');
-+  }
-+}
-+
-+/* Event wiring */
-+function wire(){
-+  $all('.nav-btn').forEach(b=> b.addEventListener('click', ()=> navTo(b.getAttribute('data-tab')) ));
-+  $('#peopleBar').addEventListener('click', ()=> navTo('people'));
-+  $('#peopleBar').addEventListener('keypress', (e)=>{ if(e.key==='Enter') navTo('people'); });
-+  $('#btnOverride').addEventListener('click', async ()=>{
-+    const cur = !!(MODEL && MODEL.override);
-+    await callAdmin('set_override', !cur);
-+    toast('Override: '+(!cur?'On':'Off'));
-+    await loadModel();
-+  });
-+  $('#btnVacanza').addEventListener('click', async ()=>{
-+    const cur = !!(MODEL && MODEL.vacanza);
-+    await callAdmin('set_vacanza', !cur);
-+    toast('Vacanza: '+(!cur?'On':'Off'));
-+    await loadModel();
-+  });
-+  $('#btnPiante').addEventListener('click', async ()=>{
-+    await callAdmin('piante');
-+    toast('Piante avviato');
-+  });
-+  $('#btnAlza').addEventListener('click', async ()=>{
-+    const doDown = ( $('#lblAlza').textContent === 'Abbassa' );
-+    if(doDown){
-+      await callAdmin('abbassa_tutto');
-+      toast('Abbassa tutto');
-+      isUpGuess = false; $('#lblAlza').textContent = 'Alza';
-+    }else{
-+      await callAdmin('alza_tutto');
-+      toast('Alza tutto');
-+      isUpGuess = true; $('#lblAlza').textContent = 'Abbassa';
-+    }
-+  });
-+}
-+
-+/* Bootstrap */
-+document.addEventListener('DOMContentLoaded', async ()=>{
-+  wire();
-+  try{
-+    await loadModel();
-+  }catch(e){
-+    toast('Errore caricamento modello'); console.error(e);
-+  }
-+});
+ 
+ /* Stato UI */
+ let MODEL = null;
+@@ -62,7 +67,7 @@ function jsonp(path, cbname){
+   return new Promise((resolve,reject)=>{
+     const cb = cbname || ('cb_'+Math.random().toString(36).slice(2));
+     window[cb] = (res)=>{ try{ delete window[cb]; resolve(res); }catch{} };
+-    const url = `${ENDPOINT_URL}${path}${path.includes('?')?'&':'?'}callback=${cb}`;
++    const url = nocache(`${ENDPOINT_URL}${path}${path.includes('?')?'&':'?'}callback=${cb}`);
+     const s = document.createElement('script'); s.src = url; s.onerror = reject;
+     document.body.appendChild(s);
+     setTimeout(()=>{ try{ s.remove(); }catch{} }, 3000);
+@@ -88,7 +93,7 @@ function loadModel(){
+   return new Promise((resolve,reject)=>{
+     window.onModel = (m)=>{ try{ MODEL=m; renderHome(m); resolve(m); }catch(e){reject(e);} };
+     const s = document.createElement('script');
+-    s.src = `${ENDPOINT_URL}?callback=onModel`; s.onerror = reject;
++    s.src = nocache(`${ENDPOINT_URL}?callback=onModel`); s.onerror = reject;
+     document.body.appendChild(s);
+     setTimeout(()=>{ try{ s.remove(); }catch{} }, 3000);
+   });
