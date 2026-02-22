@@ -1,262 +1,422 @@
-*** Begin Patch: assets/icons/bolt.svg
-*** Add File: assets/icons/bolt.svg
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M11 21h-1l1-7H7l6-11h1l-1 7h4z"/></svg>
-*** End Patch
-
-*** Begin Patch: assets/icons/device.svg
-*** Add File: assets/icons/device.svg
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M3 6h18v12H3z M7 18h10v2H7z"/></svg>
-*** End Patch
-
-*** Begin Patch: assets/icons/down.svg
-*** Add File: assets/icons/down.svg
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 19l-7-7h4V5h6v7h4z"/></svg>
-*** End Patch
-
-*** Begin Patch: assets/icons/favicon.svg
-*** Add File: assets/icons/favicon.svg
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#0bb1e6"><circle cx="12" cy="12" r="10" fill="#0bb1e6"/><path fill="#fff" d="M7 13h10v2H7zM7 9h10v2H7z"/></svg>
-*** End Patch
-
-*** Begin Patch: assets/icons/home.svg
-*** Add File: assets/icons/home.svg
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3l9 8h-3v10h-5v-6H11v6H6V11H3l9-8z"/></svg>
-*** End Patch
-
-*** Begin Patch: assets/icons/house.svg
-*** Add File: assets/icons/house.svg
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3l9 8v10h-6v-6H9v6H3V11z"/></svg>
-*** End Patch
-
-*** Begin Patch: assets/icons/humidity.svg
-*** Add File: assets/icons/humidity.svg
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2s6 6.5 6 10.5S15.314 20 12 20s-6-3-6-7.5S12 2 12 2z"/></svg>
-*** End Patch
-
-*** Begin Patch: assets/icons/leaf.svg
-*** Add File: assets/icons/leaf.svg
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M3 21s6-1 10-5 5-10 5-10-6 1-10 5-5 10-5 10z"/></svg>
-*** End Patch
-
-*** Begin Patch: assets/icons/log.svg
-*** Add File: assets/icons/log.svg
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M4 4h16v2H4zm0 6h16v2H4zm0 6h10v2H4z"/></svg>
-*** End Patch
-
-*** Begin Patch: assets/icons/menu.svg
-*** Add File: assets/icons/menu.svg
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
-*** End Patch
-
-*** Begin Patch: assets/icons/shield.svg
-*** Add File: assets/icons/shield.svg
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l8 4v6c0 5-3.58 9.74-8 10-4.42-.26-8-5-8-10V6l8-4z"/></svg>
-*** End Patch
-
-*** Begin Patch: assets/icons/thermo.svg
-*** Add File: assets/icons/thermo.svg
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M15 14.5V5a3 3 0 10-6 0v9.5a4.5 4.5 0 106 0zM12 2a3 3 0 013 3v9.5a3 3 0 11-6 0V5a3 3 0 013-3z"/></svg>
-*** End Patch
-
-*** Begin Patch: assets/icons/up.svg
-*** Add File: assets/icons/up.svg
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 5l7 7h-4v7H9v-7H5z"/></svg>
-*** End Patch
-
-*** Begin Patch: assets/icons/vacanza.svg
-*** Add File: assets/icons/vacanza.svg
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M2 19h20v2H2zM7 18c.5-2 2-4 5-4s4.5 2 5 4H7zm11-9l-2 1-1-2 2-1-1-2 2-1 1 2 2-1 1 2-2 1 1 2-2 1-1-2z"/></svg>
-*** End Patch
-
-*** Begin Patch: assets/style.css
-*** Add File: assets/style.css
-
-:root{
-  --bg1:#0a3651; --bg2:#0b74a8; --bg3:#0fb7ed; --text:#f8fbff; --muted:#d7e7f3;
-  --line:rgba(255,255,255,.18); --shadow:rgba(0,0,0,.25);
-  --tile:#134f73; --banner:#d7263d; --ok:#20df9e; --off:#9aa7b3;
-}
-*{box-sizing:border-box} html,body{height:100%}
-body{margin:0; color:var(--text); background:linear-gradient(180deg,var(--bg1),var(--bg2) 40%,var(--bg3))}
-img{display:inline-block}
-.ico{width:18px;height:18px;vertical-align:-3px}
-
-.appbar{height:60px; display:flex; align-items:center; justify-content:space-between; padding:0 14px; background:linear-gradient(180deg,#0b74a8,#0a5f89); border-bottom:1px solid var(--line)}
-.appbar .title{margin-left:8px; font-weight:800; letter-spacing:.02em}
-.kpi{background:rgba(0,0,0,.25); padding:6px 10px; border-radius:999px; font-weight:700}
-
-.banner{height:34px; display:flex; align-items:center; justify-content:center; background:var(--banner); color:white; font-weight:900; letter-spacing:.1em}
-
-.content{padding:14px; padding-bottom:80px}
-.deck{display:grid; grid-template-columns:repeat(2,minmax(280px,1fr)); gap:16px}
-.card{position:relative; background:linear-gradient(180deg,#0b6fa5,#0a5f89); border-radius:18px; padding:14px; box-shadow:0 6px 14px var(--shadow), inset 0 0 0 1px var(--line)}
-.card.wide{grid-column:1 / span 2}
-.card-head{display:flex; align-items:center; gap:10px}
-.chip-ico{width:22px;height:22px; opacity:.95}
-.card-title{font-weight:800; opacity:.9}
-.card-value{font-size:26px; font-weight:800; margin-top:6px}
-.card-value.big{font-size:36px}
-.unit{opacity:.7; font-size:12px; font-weight:700; margin-left:6px}
-
-.chips{display:flex; gap:10px; margin-top:10px}
-.chip{display:flex; align-items:center; gap:8px; padding:6px 10px; border-radius:999px; background:rgba(0,0,0,.2); font-weight:700}
-.chip .dot{width:10px; height:10px; border-radius:50%; background:var(--off)}
-.chip.on .dot{background:var(--ok)}
-
-.tiles{display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:12px; margin:14px 0}
-.tile{background:var(--tile); color:var(--text); border:none; border-radius:14px; padding:12px; font-weight:800; display:flex; align-items:center; gap:8px; box-shadow:inset 0 0 0 1px var(--line)}
-.tile:active{transform:translateY(1px)}
-
-.update{margin-top:12px; color:var(--muted)}
-
-.bottom{position:fixed; bottom:0; left:0; right:0; height:56px; display:flex; align-items:center; justify-content:space-around; background:linear-gradient(180deg,#0b74a8,#0a5f89); border-top:1px solid var(--line)}
-.bottom a{color:var(--text); text-decoration:none; opacity:.9; display:flex; align-items:center; gap:6px; font-weight:700}
-.bottom .ico{width:16px;height:16px}
-.bottom a.active{opacity:1}
-
-@media (max-width:720px){ .deck{grid-template-columns:1fr} .card.wide{grid-column:1} }
-
-*** End Patch
-
-*** Begin Patch: index.html
-*** Add File: index.html
-
-<!doctype html>
-<html lang="it">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Casa · SmartThings</title>
-  <meta name="theme-color" content="#0a5f89">
-  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="assets/style.css" />
-</head>
-<body>
-  <header class="appbar">
-    <div class="left">
-      <img src="assets/icons/home.svg" class="ico" alt="home"/>
-      <span class="title">Casa</span>
-    </div>
-    <div class="right kpi" id="kpi-weather">—°C · — km/h</div>
-  </header>
-
-  <div id="state-banner" class="banner">—</div>
-
-  <main class="content">
-    <section class="deck">
-      <article class="card wide" id="card-home">
-        <div class="card-head">
-          <img src="assets/icons/house.svg" class="chip-ico" alt="stato"/>
-          <div class="card-title">Stato casa</div>
-        </div>
-        <div class="card-value big" id="val-home">—</div>
-        <div class="chips">
-          <div class="chip cam" id="cam-interne"><span class="dot"></span><span>Interne</span></div>
-          <div class="chip cam" id="cam-esterne"><span class="dot"></span><span>Esterne</span></div>
-        </div>
-      </article>
-
-      <article class="card" id="card-energy">
-        <div class="card-head"><img src="assets/icons/bolt.svg" class="chip-ico" alt="energy"/><div class="card-title">Energy <span class="unit">kWh</span></div></div>
-        <div class="card-value" id="val-energy">—</div>
-      </article>
-
-      <article class="card" id="card-temp">
-        <div class="card-head"><img src="assets/icons/thermo.svg" class="chip-ico" alt="temp"/><div class="card-title">Temperatura <span class="unit">°C</span></div></div>
-        <div class="card-value" id="val-temp">—</div>
-      </article>
-
-      <article class="card" id="card-hum">
-        <div class="card-head"><img src="assets/icons/humidity.svg" class="chip-ico" alt="umidita"/><div class="card-title">Umidità <span class="unit">%</span></div></div>
-        <div class="card-value" id="val-hum">—</div>
-      </article>
-    </section>
-
-    <h3>Preferiti</h3>
-    <div class="tiles">
-      <button class="tile" data-action="set_vacanza"><img src="assets/icons/vacanza.svg" class="ico">Vacanza</button>
-      <button class="tile" data-action="set_override"><img src="assets/icons/shield.svg" class="ico">Override</button>
-      <button class="tile" data-action="alza_tutto"><img src="assets/icons/up.svg" class="ico">Alza</button>
-      <button class="tile" data-action="abbassa_tutto"><img src="assets/icons/down.svg" class="ico">Abbassa</button>
-      <button class="tile" data-action="piante"><img src="assets/icons/leaf.svg" class="ico">Piante</button>
-    </div>
-
-    <div class="update">Aggiornamento: <span id="val-update">—</span></div>
-  </main>
-
-  <nav class="bottom">
-    <a class="active"><img src="assets/icons/home.svg" class="ico">Home</a>
-    <a><img src="assets/icons/device.svg" class="ico">Dispositivi</a>
-    <a id="open-logs"><img src="assets/icons/log.svg" class="ico">Log</a>
-    <a><img src="assets/icons/people.svg" class="ico">Persone</a>
-    <a><img src="assets/icons/menu.svg" class="ico">Menu</a>
-  </nav>
-
-  <script>window.__WEB_APP_URL__='https://script.google.com/macros/s/AKfycbzRf9E4gTCHnq3-9Hm6BPLjIxwuTM5CiawvdbV1zKFfVQew0MWMD-Eq8nTqRW_c67uG/exec';</script>
-  <script src="js/app.js"></script>
-</body>
-</html>
-
-*** End Patch
-
-*** Begin Patch: js/app.js
-*** Add File: js/app.js
-
-(function(){
-  const WEB = window.__WEB_APP_URL__;
-
-  function jsonp(params, cb){
-    const cbName = 'cb_'+Math.random().toString(36).slice(2);
-    window[cbName] = function(data){ try{ cb(null, data); } finally { delete window[cbName]; s.remove(); } };
-    const u = new URL(WEB); Object.entries(params||{}).forEach(([k,v])=>u.searchParams.set(k,v)); u.searchParams.set('callback', cbName);
-    const s = document.createElement('script'); s.src = u.toString(); s.onerror = () => cb(new Error('JSONP error: '+u.toString())); document.head.appendChild(s);
-  }
-  const fmt = (n,d=1)=> (n==null? '—' : (Number(n).toFixed(d)));
-
-  function mapCams(state){
-    const st = String(state||'').toUpperCase();
-    let inter=false, ester=false;
-    if(st==='SECURITY_DAY' || st==='SECURITY_NIGHT'){ inter=true; ester=true; }
-    else if(st==='COMFY_NIGHT'){ inter=false; ester=true; }
-    else { inter=false; ester=false; }
-    return {inter, ester};
-  }
-
-  function render(m){
-    const st = (m.state||'—').replace(/_/g,' ');
-    document.getElementById('state-banner').textContent = st;
-
-    const home = m.presenzaEffettiva ? 'OCCUPATA' : 'VUOTA';
-    document.getElementById('val-home').textContent = home;
-
-    const cams = mapCams(m.state);
-    const inEl = document.getElementById('cam-interne');
-    const exEl = document.getElementById('cam-esterne');
-    inEl.classList.toggle('on', cams.inter); exEl.classList.toggle('on', cams.ester);
-
-    const t = m?.weather?.tempC; const wind = m?.weather?.windKmh; const hum = m?.weather?.hum;
-    document.getElementById('kpi-weather').textContent = `${fmt(t)}°C · ${wind==null?'—':wind} km/h`;
-
-    document.getElementById('val-energy').textContent = (m?.energy?.kwh==null? '—': String(m.energy.kwh));
-    document.getElementById('val-temp').textContent = fmt(t);
-    document.getElementById('val-hum').textContent  = (hum==null? '—' : String(hum));
-
-    document.getElementById('val-update').textContent = new Date(m?.meta?.nowIso||Date.now()).toLocaleString();
-
-    const logs = document.getElementById('open-logs');
-    const u = new URL(WEB); u.searchParams.set('logs','1'); u.searchParams.set('callback','console.log');
-    logs.onclick = ()=> window.open(u.toString(),'_blank');
-  }
-
-  function load(){ jsonp({}, (err, m)=>{ if(err){ console.error(err); const b=document.getElementById('state-banner'); b.textContent='CONNESSIONE FALLITA'; b.style.background='#c1121f'; return; } render(m); }); }
-  load();
-
-  document.addEventListener('click', (e)=>{
-    const b = e.target.closest('.tile'); if(!b) return; const a = b.dataset.action;
-    if(a==='set_vacanza' || a==='set_override'){
-      jsonp({}, (err, m)=>{ if(err||!m) return; const next=(a==='set_vacanza'? !m.vacanza : !m.override); jsonp({admin:'1',event:a,value:String(next)}, ()=> setTimeout(load,350)); });
-    }else{ jsonp({admin:'1',event:a}, ()=> setTimeout(load,250)); }
-  });
-})();
-
-*** End Patch
+diff --git a/index.html b/index.html
+new file mode 100644
+index 0000000..1a2b3c4
+--- /dev/null
++++ b/index.html
+@@ -0,0 +1,147 @@
++<!doctype html>
++<html lang="it">
++<head>
++  <meta charset="utf-8"/>
++  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
++  <title>Automazione • Home</title>
++  <link rel="stylesheet" href="assets/style.css"/>
++</head>
++<body>
++  <div id="app">
++    <!-- Top bar -->
++    <header class="topbar">
++      <div class="title-area">
++        <h1 class="app-title">Home</h1>
++        <span id="stateBadge" class="state-badge">—</span>
++      </div>
++      <div id="weatherPill" class="weather-pill">
++        <span id="weatherIcon" class="w-ico">☀️</span>
++        <span id="weatherTemp">--°</span>
++        <span class="dot">·</span>
++        <span id="weatherWind">-- km/h</span>
++      </div>
++    </header>
++
++    <!-- Barra Persone (clic → pagina Persone) -->
++    <div id="peopleBar" class="people-bar" role="button" tabindex="0">
++      <span>Persone</span>
++      <span id="peopleSummary" class="people-summary">—</span>
++    </div>
++
++    <!-- Pagina Home -->
++    <main id="pageHome" class="page page-active">
++      <section class="card energy-card">
++        <div class="card-title">Energy</div>
++        <div class="energy-value" id="energyValue">— kWh</div>
++      </section>
++      <section class="favorites">
++        <div class="fav-grid">
++          <button id="btnOverride" class="tile tile-md">
++            <div class="tile-ico">🛡️</div>
++            <div class="tile-txt">Override</div>
++            <div id="lblOverride" class="tile-sub">Off</div>
++          </button>
++          <button id="btnVacanza" class="tile tile-md">
++            <div class="tile-ico">🏖️</div>
++            <div class="tile-txt">Vacanza</div>
++            <div id="lblVacanza" class="tile-sub">Off</div>
++          </button>
++          <button id="btnPiante" class="tile tile-md">
++            <div class="tile-ico">🌿</div>
++            <div class="tile-txt">Piante</div>
++            <div class="tile-sub">Irriga</div>
++          </button>
++          <button id="btnAlza" class="tile tile-md">
++            <div class="tile-ico">🪟</div>
++            <div id="lblAlza" class="tile-txt">Alza</div>
++            <div class="tile-sub">Se clicco si abbassa</div>
++          </button>
++        </div>
++      </section>
++    </main>
++
++    <!-- Pagina Persone -->
++    <main id="pagePeople" class="page">
++      <section class="card">
++        <div class="card-title">Persone</div>
++        <ul id="peopleList" class="list"></ul>
++      </section>
++    </main>
++
++    <!-- Pagina Dispositivi -->
++    <main id="pageDevices" class="page">
++      <section class="card">
++        <div class="card-title">Telecamere</div>
++        <div class="cams">
++          <div class="cam-row">
++            <span>Interne</span>
++            <span id="camInterne" class="badge">—</span>
++          </div>
++          <div class="cam-row">
++            <span>Esterne</span>
++            <span id="camEsterne" class="badge">—</span>
++          </div>
++        </div>
++      </section>
++    </main>
++
++    <!-- Pagina Log -->
++    <main id="pageLog" class="page">
++      <section class="card">
++        <div class="card-title">Log (solo errori)</div>
++        <ul id="logErrors" class="list"></ul>
++      </section>
++    </main>
++
++    <!-- Bottom nav -->
++    <nav class="bottom-nav">
++      <button data-tab="home" class="nav-btn nav-active">Home</button>
++      <button data-tab="people" class="nav-btn">Persone</button>
++      <button data-tab="devices" class="nav-btn">Dispositivi</button>
++      <button data-tab="log" class="nav-btn">Log</button>
++    </nav>
++  </div>
++
++  <div id="toast" class="toast"></div>
++  <script src="js/app.js"></script>
++</body>
++</html>
+diff --git a/assets/style.css b/assets/style.css
+new file mode 100644
+index 0000000..2b3c4d5
+--- /dev/null
++++ b/assets/style.css
+@@ -0,0 +1,255 @@
++/* Base */
++:root{
++  --bg:#0e1116;
++  --card:#151a22;
++  --fg:#e7eef7;
++  --muted:#9fb0c3;
++  --accent:#4da3ff;
++  --good:#25c376;
++  --bad:#ff5d5d;
++  --warn:#ffb020;
++  --shadow:0 8px 24px rgba(0,0,0,.35);
++  --radius:14px;
++}
++*{box-sizing:border-box}
++html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font:16px/1.2 system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
++button{cursor:pointer}
++
++/* Layout */
++#app{max-width:480px;margin:0 auto;padding-bottom:72px}
++.topbar{
++  display:flex;align-items:center;justify-content:space-between;
++  padding:16px 16px 8px 16px;
++}
++.title-area{display:flex;align-items:center;gap:10px}
++.app-title{margin:0;font-size:20px;font-weight:600}
++.state-badge{
++  font-size:12px;padding:6px 10px;border-radius:999px;background:#223146;color:#d9f2ff;border:1px solid #2d4a70;
++}
++.state-badge.ok{background:rgba(37,195,118,.15);color:#c8f5df;border-color:#25c376}
++.state-badge.alert{background:rgba(255,93,93,.12);color:#ffd6d6;border-color:#ff5d5d}
++
++.weather-pill{
++  display:flex;align-items:center;gap:6px;
++  background:#1a2230;border:1px solid #2b3d56;border-radius:999px;padding:6px 10px;color:#d9e8ff
++}
++.w-ico{font-size:18px}
++.dot{opacity:.6}
++
++.people-bar{
++  display:flex;align-items:center;justify-content:space-between;
++  margin:0 16px 10px 16px;padding:10px 12px;border-radius:12px;
++  background:#121824;border:1px solid #222c3d;color:var(--muted);
++}
++.people-bar:hover{background:#151d2a}
++.people-summary{color:#c9d7ea}
++
++.page{display:none;padding:0 16px 16px}
++.page-active{display:block}
++
++.card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:16px;margin-top:12px;border:1px solid #242a34}
++.card-title{font-size:14px;color:var(--muted);margin-bottom:8px}
++
++.energy-card .energy-value{font-size:36px;font-weight:700;letter-spacing:.5px}
++
++.favorites{margin-top:12px}
++.fav-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
++.tile{
++  background:#111827;border:1px solid #222c3d;border-radius:16px;color:var(--fg);
++  padding:14px;min-height:94px;text-align:left;
++}
++.tile:hover{background:#132033}
++.tile-ico{font-size:24px;margin-bottom:8px}
++.tile-txt{font-size:16px;font-weight:600}
++.tile-sub{color:var(--muted);margin-top:2px;font-size:12px}
++.tile.on{outline:2px solid var(--accent)}
++.tile.warn{outline:2px solid var(--warn)}
++
++.list{list-style:none;padding:0;margin:0}
++.list li{
++  display:flex;align-items:center;justify-content:space-between;
++  padding:12px 0;border-bottom:1px solid #222c3d;color:#d9e8ff
++}
++.list .sub{font-size:12px;color:var(--muted)}
++.badge{
++  display:inline-block;padding:4px 10px;border-radius:999px;border:1px solid #2b3d56;background:#1a2230;color:#cfe2ff
++}
++.badge.ok{border-color:#25c376;background:rgba(37,195,118,.15);color:#baf0d5}
++.badge.err{border-color:#ff5d5d;background:rgba(255,93,93,.12);color:#ffd6d6}
++
++.cams .cam-row{
++  display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-bottom:1px solid #222c3d
++}
++
++.bottom-nav{
++  position:fixed;left:0;right:0;bottom:0;background:#0f141d;border-top:1px solid #232b3a;
++  display:flex;gap:2px;justify-content:space-around;padding:10px 8px;max-width:480px;margin:0 auto;
++}
++.nav-btn{
++  flex:1;background:#0f141d;border:1px solid #1e2736;color:#cfe2ff;padding:10px 6px;border-radius:12px;font-weight:600
++}
++.nav-btn.nav-active{border-color:#4da3ff;background:#12233b;color:white}
++
++.toast{
++  position:fixed;left:50%;transform:translateX(-50%);bottom:80px;
++  background:#101826;color:#e7f1ff;padding:10px 14px;border:1px solid #294163;border-radius:10px;box-shadow:var(--shadow);
++  opacity:0;pointer-events:none;transition:opacity .2s ease
++}
++.toast.show{opacity:1}
+diff --git a/js/app.js b/js/app.js
+new file mode 100644
+index 0000000..3c4d5e6
+--- /dev/null
++++ b/js/app.js
+@@ -0,0 +1,420 @@
++/* Automazione UI — SmartThings-like 2x2 */
++/* Config: ENDPOINT_URL è già impostato sul tuo Apps Script /exec */
++const ENDPOINT_URL = 'https://script.google.com/macros/s/AKfycbzRf9E4gTCHnq3-9Hm6BPLjIxwuTM5CiawvdbV1zKFfVQew0MWMD-Eq8nTqRW_c67uG/exec';
++
++/* Stato UI */
++let MODEL = null;
++let isUpGuess = true; // ipotesi iniziale per Alza/Abbassa
++
++/* Helpers */
++function $(sel){ return document.querySelector(sel); }
++function $all(sel){ return Array.from(document.querySelectorAll(sel)); }
++function toast(msg){
++  const t = $('#toast'); t.textContent = msg || '';
++  t.classList.add('show'); setTimeout(()=>t.classList.remove('show'), 1700);
++}
++function fmtTs(d){
++  if(!d) return '—';
++  const dt = (d instanceof Date) ? d : new Date(d);
++  const it = new Intl.DateTimeFormat('it-IT',{dateStyle:'short', timeStyle:'short'});
++  return it.format(dt);
++}
++function weatherEmoji(key){
++  const map = {
++    sun:'☀️', few:'🌤️', part:'⛅', cloud:'☁️',
++    fog:'🌫️', drizzle:'🌦️', rain:'🌧️', showers:'🌦️',
++    storm:'⛈️', hail:'🌨️'
++  };
++  return map[key] || '☀️';
++}
++function setBadgeState(state){
++  const el = $('#stateBadge');
++  el.classList.remove('ok','alert');
++  let label = '—';
++  if(!state){ el.textContent = label; return; }
++  const s = String(state).toUpperCase();
++  if(s.startsWith('COMFY')){ el.classList.add('ok'); label = 'COMFY'; }
++  else if(s.startsWith('SECURITY')){ el.classList.add('alert'); label = 'SECURITY'; }
++  else { label = s; }
++  el.textContent = label;
++}
++function navTo(tab){
++  const map = {home:'#pageHome', people:'#pagePeople', devices:'#pageDevices', log:'#pageLog'};
++  $all('.page').forEach(p=>p.classList.remove('page-active'));
++  $(map[tab]).classList.add('page-active');
++  $all('.nav-btn').forEach(b=>b.classList.remove('nav-active'));
++  $(`.nav-btn[data-tab="${tab}"]`).classList.add('nav-active');
++  if(tab==='people') loadPeople();
++  if(tab==='devices') loadCams();
++  if(tab==='log') loadErrors();
++}
++
++/* Admin calls */
++function callAdmin(evt, value){
++  return new Promise((resolve,reject)=>{
++    const cb = 'cb_admin_'+Math.random().toString(36).slice(2);
++    window[cb] = (res)=>{ try{ delete window[cb]; resolve(res); }catch{} };
++    const v = (value===undefined)? '' : '&value='+encodeURIComponent(String(value));
++    const url = `${ENDPOINT_URL}?admin=1&event=${encodeURIComponent(evt)}&callback=${cb}${v}`;
++    const s = document.createElement('script'); s.src = url; s.onerror = reject;
++    document.body.appendChild(s);
++    setTimeout(()=>{ try{ s.remove(); }catch{} }, 2000);
++  });
++}
++
++/* Mini endpoints */
++function jsonp(path, cbname){
++  return new Promise((resolve,reject)=>{
++    const cb = cbname || ('cb_'+Math.random().toString(36).slice(2));
++    window[cb] = (res)=>{ try{ delete window[cb]; resolve(res); }catch{} };
++    const url = `${ENDPOINT_URL}${path}${path.includes('?')?'&':'?'}callback=${cb}`;
++    const s = document.createElement('script'); s.src = url; s.onerror = reject;
++    document.body.appendChild(s);
++    setTimeout(()=>{ try{ s.remove(); }catch{} }, 3000);
++  });
++}
++function loadPeople(){
++  jsonp('?people=1').then(res=>{
++    const arr = (res && res.people) ? res.people : [];
++    const ul = $('#peopleList'); ul.innerHTML = '';
++    arr.forEach(p=>{
++      const li = document.createElement('li');
++      const left = document.createElement('div');
++      left.innerHTML = `<div>${p.name}</div><div class="sub">${p.lastEvent||'—'} • ${fmtTs(p.ts)}</div>`;
++      const right = document.createElement('div');
++      right.innerHTML = `<span class="badge ${p.online?'ok':'err'}">${p.online?'Online':'Offline'}</span>`;
++      li.appendChild(left); li.appendChild(right); ul.appendChild(li);
++    });
++  }).catch(()=>{ /* ignore */ });
++}
++function loadCams(){
++  jsonp('?cams=1').then(res=>{
++    const ci = $('#camInterne'), ce = $('#camEsterne');
++    const iOn = !!(res && res.interne), eOn = !!(res && res.esterne);
++    ci.textContent = iOn ? 'ON' : 'OFF'; ci.className = 'badge '+(iOn?'ok':'err');
++    ce.textContent = eOn ? 'ON' : 'OFF'; ce.className = 'badge '+(eOn?'ok':'err');
++  }).catch(()=>{ /* ignore */ });
++}
++function loadErrors(){
++  jsonp('?errors=1').then(res=>{
++    const ul = $('#logErrors'); ul.innerHTML='';
++    const arr = (res && res.errors) ? res.errors : [];
++    if(arr.length===0){
++      const li = document.createElement('li'); li.textContent='Nessun errore';
++      ul.appendChild(li); return;
++    }
++    arr.forEach(e=>{
++      const li = document.createElement('li');
++      const left = document.createElement('div');
++      left.innerHTML = `<div>${e.code||'ERR'}</div><div class="sub">${e.desc||''} • ${fmtTs(e.ts)}</div>`;
++      ul.appendChild(li);
++      li.appendChild(left);
++    });
++  }).catch(()=>{ /* ignore */ });
++}
++
++/* Prima chiamata: modello completo */
++function loadModel(){
++  return new Promise((resolve,reject)=>{
++    window.onModel = (m)=>{ try{ MODEL=m; renderHome(m); resolve(m); }catch(e){reject(e);} };
++    const s = document.createElement('script');
++    s.src = `${ENDPOINT_URL}?callback=onModel`; s.onerror = reject;
++    document.body.appendChild(s);
++    setTimeout(()=>{ try{ s.remove(); }catch{} }, 3000);
++  });
++}
++
++/* Render */
++function renderHome(m){
++  setBadgeState(m && m.state);
++  if(m && m.weather){
++    $('#weatherIcon').textContent = weatherEmoji(m.weather.iconEmoji || '');
++    $('#weatherTemp').textContent = (m.weather.tempC!=null ? Math.round(m.weather.tempC)+'°' : '--°');
++    $('#weatherWind').textContent = (m.weather.windKmh!=null ? Math.round(m.weather.windKmh)+' km/h' : '-- km/h');
++  }
++  const ev = (m && m.energy && m.energy.kwh!=null) ? m.energy.kwh : null;
++  $('#energyValue').textContent = (ev!=null ? String(ev)+' kWh' : '— kWh');
++  $('#lblOverride').textContent = (m && m.override) ? 'On' : 'Off';
++  $('#lblVacanza').textContent = (m && m.vacanza) ? 'On' : 'Off';
++  $('#btnOverride').classList.toggle('on', !!(m && m.override));
++  $('#btnVacanza').classList.toggle('on', !!(m && m.vacanza));
++  const st = String(m && m.state || '').toUpperCase();
++  isUpGuess = (st==='COMFY_DAY');
++  $('#lblAlza').textContent = isUpGuess ? 'Abbassa' : 'Alza';
++  const ppl = (m && m.people) ? m.people : [];
++  const onCount = ppl.filter(p=>p.online).length;
++  $('#peopleSummary').textContent = `${onCount} online / ${ppl.length} totali`;
++  if(m && m.cams){
++    $('#camInterne').textContent = m.cams.interne ? 'ON' : 'OFF';
++    $('#camInterne').className = 'badge '+(m.cams.interne?'ok':'err');
++    $('#camEsterne').textContent = m.cams.esterne ? 'ON' : 'OFF';
++    $('#camEsterne').className = 'badge '+(m.cams.esterne?'ok':'err');
++  }
++}
++
++/* Event wiring */
++function wire(){
++  $all('.nav-btn').forEach(b=> b.addEventListener('click', ()=> navTo(b.getAttribute('data-tab')) ));
++  $('#peopleBar').addEventListener('click', ()=> navTo('people'));
++  $('#peopleBar').addEventListener('keypress', (e)=>{ if(e.key==='Enter') navTo('people'); });
++  $('#btnOverride').addEventListener('click', async ()=>{
++    const cur = !!(MODEL && MODEL.override);
++    await callAdmin('set_override', !cur);
++    toast('Override: '+(!cur?'On':'Off'));
++    await loadModel();
++  });
++  $('#btnVacanza').addEventListener('click', async ()=>{
++    const cur = !!(MODEL && MODEL.vacanza);
++    await callAdmin('set_vacanza', !cur);
++    toast('Vacanza: '+(!cur?'On':'Off'));
++    await loadModel();
++  });
++  $('#btnPiante').addEventListener('click', async ()=>{
++    await callAdmin('piante');
++    toast('Piante avviato');
++  });
++  $('#btnAlza').addEventListener('click', async ()=>{
++    const doDown = ( $('#lblAlza').textContent === 'Abbassa' );
++    if(doDown){
++      await callAdmin('abbassa_tutto');
++      toast('Abbassa tutto');
++      isUpGuess = false; $('#lblAlza').textContent = 'Alza';
++    }else{
++      await callAdmin('alza_tutto');
++      toast('Alza tutto');
++      isUpGuess = true; $('#lblAlza').textContent = 'Abbassa';
++    }
++  });
++}
++
++/* Bootstrap */
++document.addEventListener('DOMContentLoaded', async ()=>{
++  wire();
++  try{
++    await loadModel();
++  }catch(e){
++    toast('Errore caricamento modello'); console.error(e);
++  }
++});
