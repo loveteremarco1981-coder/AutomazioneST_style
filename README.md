@@ -1,0 +1,1 @@
+# AutomazioneST_style
